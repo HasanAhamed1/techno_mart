@@ -9,7 +9,8 @@ const Blogs = () => {
             <h1>When should you use nodejs and when should you use mongodb?</h1>
             <p><b>Ans:</b></p>
             <h1>Differences between sql and nosql databases.</h1>
-            <p><b>Ans:</b>SQL is relational database and NoSQL stands for non relational database. Vertically scalable file used in SQL. Also the databases are table based. On the other hand NonSQL use horizontally scalable file and here the database are document type, graph, wide column. Sql use predefined schema and structured query language so that its better for multi row transictions, </p>
+            <p><b>Ans:</b>SQL is relational database and NoSQL stands for non relational database. Vertically scalable file used in SQL. Also the databases are table based. On the other hand NonSQL use horizontally scalable file and here the database are document type, graph, wide column. Sql use predefined schema and structured query language so that its better for multi row transictions. NoSQL databases use dynamic schemas so its better for unstructure data like JSON file or any other documents.</p>
+            <br />
             <h1>What is the purpose of jwt and how does it work</h1>
             <p><b>Ans:</b></p>
         </div>
