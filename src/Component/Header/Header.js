@@ -7,6 +7,7 @@ import {
   HeartIcon,
   TruckIcon,
   UserIcon,
+  UsersIcon,
 } from "@heroicons/react/outline";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -40,6 +41,7 @@ const Header = () => {
         <div className="flex ml-8 m-2">
           <button><UserIcon className="h-8 w-8 mx-5" onClick={() => navigate('/login')}></UserIcon></button>
           <button><HeartIcon className="h-8 w-8 mx-5"></HeartIcon></button>
+          
           <button><CogIcon className="h-8 w-8 mx-5"></CogIcon></button>
         </div>
       </div>
@@ -85,4 +87,3 @@ const Header = () => {
 };
 
 export default Header;
-
