@@ -2,6 +2,35 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Name of the project 'TECHNO MART'
+
+## livesite
+You can go to the website by clicking this [link]().
+
+## YOU CAN FIND
+**Here  one can maintain his/her warehouse.**
+
+### Tools used:
+- json file
+- DOM
+- Tailwind
+- Heroicons
+- Mongodb
+- Fontawesome
+- Firebase
+- React
+
+
+### Feature:
+- Sign Up opition
+- After registration one can login and logout by their credintial
+- It helps you to maintain products in a warehouse
+- This website provide you customer's demand
+- You can update and change data
+
+### wanna communicate:
+
+[if want communicate](https://www.facebook.com/akash.hossain.75457081/)
 ## Available Scripts
 
 In the project directory, you can run:
