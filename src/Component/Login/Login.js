@@ -1,6 +1,6 @@
 import { async } from "@firebase/util";
 import {
-  LockClosedIcon,
+  
   LockOpenIcon,
   MailIcon,
 } from "@heroicons/react/outline";
@@ -18,7 +18,7 @@ import Loading from "../Loading/Loading";
 import Register from "../Register/Register";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+
 
 const Login = () => {
   const emailRef = useRef("");
@@ -49,14 +49,13 @@ const Login = () => {
     errorElement = <p className="thin">Error: {error?.message}</p>;
   }
 
-    const handleUserSignIn = async (event) => {
+    const handleUserSignIn = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passRef.current.value;
-    await signInWithEmailAndPassword(email, password);
+    signInWithEmailAndPassword(email, password);
     console.log(email, password);
-    const {data} = await axios.post('http://localhost:5000/login', {email});
-    localStorage.setItem('accessToken', data.accessToken);
+    
   };
 
   const resetPass = async () => {
