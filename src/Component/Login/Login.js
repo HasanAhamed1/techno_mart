@@ -10,6 +10,7 @@ import React, { useRef, useState } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
@@ -17,6 +18,7 @@ import Loading from "../Loading/Loading";
 import Register from "../Register/Register";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const Login = () => {
   const emailRef = useRef("");
@@ -26,6 +28,8 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+    const [signInWithGoogle, userG] = useSignInWithGoogle(auth);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -45,12 +49,14 @@ const Login = () => {
     errorElement = <p className="thin">Error: {error?.message}</p>;
   }
 
-    const handleUserSignIn = (event) => {
+    const handleUserSignIn = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passRef.current.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
     console.log(email, password);
+    const {data} = await axios.post('http://localhost:5000/login', {email});
+    localStorage.setItem('accessToken', data.accessToken);
   };
 
   const resetPass = async () => {
@@ -62,6 +68,7 @@ const Login = () => {
     else {
       toast("please eneter your email address");
     }
+    
   };
   return (
     <div className="flex justify-center">
@@ -97,6 +104,7 @@ const Login = () => {
             />
           </div>
           <br />
+          
           <button
             className="h-12 w-28 rounded-md bg-black text-white font-semibold text-xs mx-5"
             type="submit"
@@ -105,13 +113,24 @@ const Login = () => {
           </button>
         </form>
         {errorElement}
+        <br />
         <p>
-          Forget Password? <button onClick={resetPass}>Reset Password</button>
+          Forget Password? <button className="border" onClick={resetPass}>Reset Password</button>
         </p>
         <ToastContainer />
+        <br />
+        <hr />
+          <br />
+        <button
+        className="h-12 w-28 rounded-md bg-blue-500 text-white font-semibold text-xs mx-5"
+        onClick={() => signInWithGoogle()}
+      >
+        Google Sign In
+      </button>
       </div>
     </div>
   );
 };
 
 export default Login;
+

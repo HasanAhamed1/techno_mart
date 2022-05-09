@@ -86,17 +86,9 @@ const Register = () => {
         </button>
       </form>
       <br />
-      <div className="grid grid-cols-1">
-        <div>
-          <hr />
-        </div>
-        <div>
-          <p>or</p>
-        </div>
-        <div>
-          <hr />
-        </div>
-      </div>
+
+      <hr />
+      <br />
       <button
         className="h-12 w-28 rounded-md bg-blue-500 text-white font-semibold text-xs mx-5"
         onClick={() => signInWithGoogle()}
@@ -108,4 +100,3 @@ const Register = () => {
 };
 
 export default Register;
-

@@ -11,16 +11,14 @@ const Home = () => {
   return (
     <div>
       {/* ---------banner-------- */}
-      <div className="flex bg-gradient-to-r from-blue-500 to-cyan-600 m-12 p-10">
-        <div className="p-20">
+      <div className="grid grid-cols-2 lg:flex bg-gradient-to-r from-blue-500 to-cyan-600 m-12 p-10">
+        <div className="lg:p-20">
           <h2 className="text-white text-3xl font-bold">From 950$</h2>
           <h2 className="text-white text-4xl font-bold pb-5">
             Samsung Folding Phone
           </h2>
           <p className="text-white font-semibold py-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quae
-            assumenda ab distinctio ipsa autem! Perferendis aspernatur possimus
-            officiis quia?
+          Galaxy Fold seen from the front slightly folded with a butterfly onscreen. The biggest breakthrough since the mobile phone. Introducing Galaxy Z Fold3 5G, everything you want in a foldable 5G smartphone.
           </p>
           <button className="flex items-center py-5 text-red-600 font-semibold">
             <p>
@@ -39,8 +37,8 @@ const Home = () => {
       </div>
 
       {/* ----------select section (extra section)--------- */}
-      <div className="grid grid-cols-2 justify-items-center mx-10">
-        <div className="grid justify-items-center bg-gray-100 hover:bg-gray-300 ml-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center mx-10 sm:gap-3">
+        <div className="grid justify-items-center bg-gray-100 hover:bg-gray-300 lg:ml-3">
           <div className="pt-4 text-center">
             <h3 className="text-xl font-bold my-2">MacBook Air</h3>
             <p className="text-thin text-xs text-gray-400">
@@ -55,7 +53,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex items-center bg-gray-100 hover:bg-gray-300 px-8 ml-6">
+        <div className="flex items-center bg-gray-100 hover:bg-gray-300 lg:px-8 lg:ml-6">
           <div className="grid justify-items-center">
             <h3 className="text-xl font-bold my-2">Gaming Mouse</h3>
             <p className="text-thin text-xs text-gray-400">
@@ -77,32 +75,26 @@ const Home = () => {
       <div className="m-12 p-10">
         <h1 className="text-4xl font-semibold pb-5">Laptop:</h1>
         <hr />
-        <div className="flex justify-evenly pt-2">
-          <div className="mr-10 text-gray-500 text-sm font-bold">
-            <button className="m-3">HP</button>
-            <button className="m-3">ASUS</button>
-            <button className="m-3">MACBOOK</button>
-            <button className="m-3">DEL</button>
-            <button className="m-3">ACER</button>
-            <button className="m-3">HUAWEI</button>
-            <button className="m-3">LENOVO</button>
-          </div>
-          <div className="">
-            <button className="h-10 w-28 m-2 bg-blue-500 text-sm text-white font-bold">
-              New Arrivals
-            </button>
-            <button className="h-10 w-28 m-2 bg-gray-300 text-sm font-bold">
-              Best Sellers
-            </button>
-            <button className="h-10 w-28 m-2 bg-gray-300 text-sm font-bold">
-              On Sale
-            </button>
-          </div>
-        </div>
+        <div className='lg:flex justify-evenly pt-2'>
+                   <div className='lg:flex lg:mr-10 text-gray-500 text-sm font-bold'>
+                   <button className='mr-2 lg:m-3'>HP</button>
+                    <button className='mr-2 lg:m-3'>ASUS</button>
+                    <button className='mr-2 lg:m-3'>MACBOOK</button>
+                    <button className='mr-2 lg:m-3'>DEL</button>
+                    <button className='mr-2 lg:m-3'>ACER</button>
+                    <button className='mr-2 lg:m-3'>HUAWEI</button>
+                    <button className='mr-2 lg:m-3'>LENOVO</button>
+                   </div>
+                    <div className=''>
+                        <button className='h-10 w-28 m-2 bg-blue-500 text-sm text-white font-bold'>New Arrivals</button>
+                        <button className='h-10 w-28 m-2 bg-gray-300 text-sm font-bold'>Best Sellers</button>
+                        <button className='h-10 w-28 m-2 bg-gray-300 text-sm font-bold'>On Sale</button>
+                    </div>
+                </div>
         <hr />
 
 {/* ..........home page products........ */}
-        <div className="grid gap-10 grid-cols-2 lg:grid-cols-3 pt-10">
+        <div className="grid gap-10 grid-cols-1 lg:grid-cols-3 pt-10">
           {items.slice(0, 6).map((item) => (
             <Item key={item._id} item={item}></Item>
           ))}
@@ -116,7 +108,7 @@ const Home = () => {
       </div>
 
       {/* ----------extra section----------- */}
-      <div className="grid grid-cols-2 justify-items-center mx-16 gap-5">
+      <div className="grid lg:grid-cols-2 justify-items-center mx-16 gap-5">
         <div>
           <h1 className="font-bold text-2xl">Watch</h1>
           <br />
@@ -159,18 +151,7 @@ const Home = () => {
             <p>666$</p>
             <button className="m-2"><ShoppingCartIcon className="h-5 w-5 text-black"></ShoppingCartIcon></button>
           </div>
-          {/* <div>
-            <img
-              src="https://i.ibb.co/wQShLvS/1-28abe42e-069c-4e6b-8d23-5cfb9bbb844d-425x425-removebg-preview.png"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="https://i.ibb.co/S6WMQMj/5-56514da7-84ba-45f6-9ee0-989448d194a1-425x425-removebg-preview.png"
-              alt=""
-            />
-          </div> */}
+          
         </div>
         </div>
         <div>
@@ -206,5 +187,6 @@ const Home = () => {
      </div>
     </div>
   );
-}
+};
+
 export default Home;
