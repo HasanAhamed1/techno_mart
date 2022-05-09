@@ -3,6 +3,7 @@ import './App.css';
 import About from './Component/About/About';
 import AddItem from './Component/AddItem/AddItem';
 import Blogs from './Component/Blogs/Blogs';
+import Footer from './Component/Footer/Footer';
 import Header from './Component/Header/Header';
 import Home from './Component/Home/Home';
 import ItemDetail from './Component/ItemDetail/ItemDetail';
@@ -47,6 +48,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }
