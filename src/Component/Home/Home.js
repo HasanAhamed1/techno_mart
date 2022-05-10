@@ -11,13 +11,13 @@ const Home = () => {
   return (
     <div>
       {/* ---------banner-------- */}
-      <div className="grid grid-cols-2 lg:flex bg-gradient-to-r from-blue-500 to-cyan-600 m-12 p-10">
+      <div className="grid grid-cols-1 lg:flex bg-gradient-to-r from-blue-500 to-cyan-600 m-12 p-10">
         <div className="lg:p-20">
           <h2 className="text-white text-3xl font-bold">From 950$</h2>
           <h2 className="text-white text-4xl font-bold pb-5">
             Samsung Folding Phone
           </h2>
-          <p className="text-white font-semibold py-5">
+          <p className="text-white lg:font-semibold lg:py-5">
           Galaxy Fold seen from the front slightly folded with a butterfly onscreen. The biggest breakthrough since the mobile phone. Introducing Galaxy Z Fold3 5G, everything you want in a foldable 5G smartphone.
           </p>
           <button className="flex items-center py-5 text-red-600 font-semibold">
@@ -37,7 +37,7 @@ const Home = () => {
       </div>
 
       {/* ----------select section (extra section)--------- */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center mx-10 sm:gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center mx-10 gap-5 lg:gap-0">
         <div className="grid justify-items-center bg-gray-100 hover:bg-gray-300 lg:ml-3">
           <div className="pt-4 text-center">
             <h3 className="text-xl font-bold my-2">MacBook Air</h3>
@@ -72,7 +72,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="m-12 p-10">
+      <div className="m-5 lg:m-12 lg:p-10">
         <h1 className="text-4xl font-semibold pb-5">Laptop:</h1>
         <hr />
         <div className='lg:flex justify-evenly pt-2'>
@@ -85,7 +85,7 @@ const Home = () => {
                     <button className='mr-2 lg:m-3'>HUAWEI</button>
                     <button className='mr-2 lg:m-3'>LENOVO</button>
                    </div>
-                    <div className=''>
+                    <div className='flex'>
                         <button className='h-10 w-28 m-2 bg-blue-500 text-sm text-white font-bold'>New Arrivals</button>
                         <button className='h-10 w-28 m-2 bg-gray-300 text-sm font-bold'>Best Sellers</button>
                         <button className='h-10 w-28 m-2 bg-gray-300 text-sm font-bold'>On Sale</button>
@@ -151,7 +151,6 @@ const Home = () => {
             <p>666$</p>
             <button className="m-2"><ShoppingCartIcon className="h-5 w-5 text-black"></ShoppingCartIcon></button>
           </div>
-          
         </div>
         </div>
         <div>

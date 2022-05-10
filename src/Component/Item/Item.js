@@ -33,6 +33,7 @@ const Item = ({ item }) => {
         <p>
           Description: <span className="font-thin">{description}</span>
         </p>
+        
         <button
           className="rounded bg-blue-500 text-white font-bold h-10 w-28 mt-5"
           onClick={() => navigateToItemDetail(_id)}

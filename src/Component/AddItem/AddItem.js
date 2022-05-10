@@ -1,10 +1,17 @@
 import { AnnotationIcon, BriefcaseIcon, PhotographIcon, PlusCircleIcon, PlusIcon, TagIcon, UserIcon } from "@heroicons/react/outline";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+
 import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
+
 
 const AddItem = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
+  const [user] = useAuthState(auth);
+  
+
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit =  (data) =>  {
     console.log(data);
     const url = `http://localhost:5000/item`;
     fetch(url, {
@@ -16,9 +23,14 @@ const AddItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-      });
+        reset();
+      },);
+  
   };
+
+  
+
+ 
   return (
     <div className="grid justify-center m-10">
         <h1 className="my-3 text-3xl font-bold text-red-400">Add New Item:</h1>
@@ -42,7 +54,12 @@ const AddItem = () => {
           <br />
           <div className="flex items-center h-12 w-96 border p-5">
               <UserIcon className="h-5 w-5 mr-5"></UserIcon>
-              <input placeholder="Supplier Name" {...register("supplierName")} required />
+              <input placeholder="Supplier Name" {...register("supplierName")} value={user.displayName} />
+          </div>
+          <br />
+          <div className="flex items-center h-12 w-96 border p-5">
+              <UserIcon className="h-5 w-5 mr-5"></UserIcon>
+              <input placeholder="email" {...register("email")} value={user.email} readOnly />
           </div>
           <br />
           <div className="flex items-center h-18 w-96 border p-5">
@@ -56,7 +73,7 @@ const AddItem = () => {
           </div>
         
         <br />
-        <input className="grid justify-items-end border h-10 w-28 bg-red-300 text-white font-bold" type="submit" value="Add Item" />
+        <button className="border h-10 w-28 bg-red-300 text-white font-bold" type="submit">Add Item</button>
       </form>
     </div>
   );
