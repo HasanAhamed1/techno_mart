@@ -8,7 +8,7 @@ const { itemId } = useParams();
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/item/${itemId}`;
+    const url = `https://warm-cliffs-40303.herokuapp.com/item/${itemId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItem(data));

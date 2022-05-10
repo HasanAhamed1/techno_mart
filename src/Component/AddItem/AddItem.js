@@ -13,7 +13,7 @@ const AddItem = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit =  (data) =>  {
     console.log(data);
-    const url = `http://localhost:5000/item`;
+    const url = `https://warm-cliffs-40303.herokuapp.com/item`;
     fetch(url, {
       method: "POST",
       headers: {
